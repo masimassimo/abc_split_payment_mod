@@ -46,7 +46,8 @@ class AccountMove(models.Model):
                 else:
                     move._compute_split_payments()
             
-            move.amount_total = move.amount_total + move.amount_sp
+            # Rimosso perche nell XML l importo viene gia sommato
+            #move.amount_total = move.amount_total + move.amount_sp
 
     def _build_debit_line(self):
         if not self.company_id.sp_account_id:
